@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Content Example</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100%;
+    }
+
+    #overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.8);
+    }
+
+    #content-container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      border: none;
+    }
+
+    #image-overlay-1,
+    #image-overlay-2 {
+/*      position: absolute;
+/*      top: 0;
+/*      left: 20%;
+/*      width: 60%;
+/*      height: 1cm; /* Height set to 1cm */
+    }
+
+    #image-overlay-2 {
+      position: absolute;
+      top: 0.1cm;
+      left: 22%;
+      width: 0cm; /*4cm; /* Set the width to 3cm for the second image */
+      height: 0cm; /*1.7cm; /* Set the height to 3cm for the second image */
+      
+    }
+  </style>
+</head>
+<body>
+  <!-- Removed buttons for automatic loading -->
+  
+  <div id="overlay">
+    <iframe id="content-container"></iframe>
+    <img id="image-overlay-1" src="https://search.pstatic.net/sunny/?src=https%3A%2F%2F5.imimg.com%2Fdata5%2FNI%2FLH%2FMY-11879778%2Fcommercial-plywood-500x500.jpg&type=a340" alt="Mickey Mouse">
+    <img id="image-overlay-2" src="https://search.pstatic.net/sunny/?src=https%3A%2F%2F5.imimg.com%2Fdata5%2FNI%2FLH%2FMY-11879778%2Fcommercial-plywood-500x500.jpg" alt="Second Image">
+  </div>
+
+  <script>
+    function loadContent(url) {
+      // Set the src attribute of the iframe to load the content from the specified URL
+      document.getElementById('content-container').src = url;
+
+      // Display the overlay
+      document.getElementById('overlay').style.display = 'block';
+    }
+
+    // Automatically load content when the page loads
+    window.onload = function() {
+      //<!-- loadContent('https://m67.kotbc.com/'); -->
+      loadContent('코무비.html');
+    };
+  </script>
+</body>
+</html>
